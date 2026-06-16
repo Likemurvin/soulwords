@@ -1,0 +1,139 @@
+/* ─── Reset ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ─── Design tokens ─────────────────────────────────────────────────────────── */
+:root {
+  /* backgrounds */
+  --bg:       #0a0a0a;
+  --bg1:      #0f0f0f;
+  --bg2:      #151517;
+  --bg3:      #1c1c1e;
+
+  /* text */
+  --txt:      #f9f9f9;
+  --txt2:     #8a8a8a;
+  --txt3:     #4d4d4d;
+
+  /* borders */
+  --border:   rgba(255,255,255,.09);
+
+  /* brand accents */
+  --gold:     #c7a35b;
+  --gold-dim: #60543b;
+  --purple:   #6D28D9;
+  --purple2:  #3b1d8a;
+
+  /* semantic */
+  --green:    #26dd6e;
+  --red:      #f43a33;
+  --blue:     #329eeb;
+
+  /* legacy aliases used by older screens */
+  --accent:       var(--purple);
+  --accent-bg:    rgba(109,40,217,.12);
+  --accent-border:rgba(109,40,217,.4);
+  --shadow:       0 4px 24px rgba(0,0,0,.6);
+}
+
+/* ─── Base ──────────────────────────────────────────────────────────────────── */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;            /* the app handles its own scroll */
+  background: var(--bg);
+  color: var(--txt);
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Screen wrapper ────────────────────────────────────────────────────────── */
+/* Every screen should use className="screen" */
+.screen {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background: var(--bg);
+  /* leave room for the fixed bottom tab bar */
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+}
+
+/* ─── Buttons ───────────────────────────────────────────────────────────────── */
+button {
+  font-family: inherit;
+  -webkit-appearance: none;
+}
+
+/* Primary CTA button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: opacity .15s, transform .1s;
+  user-select: none;
+}
+.btn:active { transform: scale(.97); opacity: .85; }
+
+.btn-p {
+  background: linear-gradient(135deg, var(--purple2), var(--purple));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(109,40,217,.35);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(199,163,91,.3);
+}
+
+.btn-ghost {
+  background: var(--bg2);
+  color: var(--txt2);
+  border: 1px solid var(--border);
+}
+
+/* ─── Cards ─────────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 16px;
+}
+
+/* ─── Typography helpers ────────────────────────────────────────────────────── */
+.mono {
+  font-family: 'Roboto Mono', 'SF Mono', monospace;
+}
+
+.label-xs {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--txt3);
+}
+
+/* ─── Scrollbar — hide on mobile, subtle on desktop ────────────────────────── */
+::-webkit-scrollbar          { width: 0; height: 0; }
+::-webkit-scrollbar-track    { background: transparent; }
+::-webkit-scrollbar-thumb    { background: rgba(255,255,255,.1); border-radius: 99px; }
+
+/* ─── Safe area helpers ─────────────────────────────────────────────────────── */
+.safe-top    { padding-top:    env(safe-area-inset-top,    0px); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }

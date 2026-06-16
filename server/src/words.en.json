@@ -1,0 +1,22 @@
+[
+  { "w": "CANDLE",      "d": "easy",       "lang": "en", "fr": ["CANDL"],         "desc": "A wax stick that produces light when burning" },
+  { "w": "MIRROR",      "d": "easy",       "lang": "en", "fr": ["MIRR"],          "desc": "A surface that reflects your image" },
+  { "w": "BRIDGE",      "d": "easy",       "lang": "en", "fr": ["BRIDG"],         "desc": "A structure built over a river or gap" },
+  { "w": "LADDER",      "d": "easy",       "lang": "en", "fr": ["LADD"],          "desc": "A device for climbing up or down" },
+  { "w": "FEATHER",     "d": "easy",       "lang": "en", "fr": ["FEATH"],         "desc": "A light growth from a bird's skin" },
+  { "w": "VOLCANO",     "d": "medium",     "lang": "en", "fr": ["VOLCAN"],        "desc": "A mountain that can erupt with lava" },
+  { "w": "COMPASS",     "d": "medium",     "lang": "en", "fr": ["COMPASS"],       "desc": "A device that shows magnetic north" },
+  { "w": "ECLIPSE",     "d": "medium",     "lang": "en", "fr": ["ECLIPS"],        "desc": "When one celestial body blocks another" },
+  { "w": "LABYRINTH",   "d": "medium",     "lang": "en", "fr": ["LABYR"],         "desc": "A complex network of paths or passages" },
+  { "w": "PENDULUM",    "d": "medium",     "lang": "en", "fr": ["PENDUL"],        "desc": "A weight on a string that swings back and forth" },
+  { "w": "PARCHMENT",   "d": "hard",       "lang": "en", "fr": ["PARCHM"],        "desc": "Writing material made from animal skin" },
+  { "w": "CATACOMBS",   "d": "hard",       "lang": "en", "fr": ["CATACOMB"],      "desc": "Underground tunnels used as burial places" },
+  { "w": "ALCHEMY",     "d": "hard",       "lang": "en", "fr": ["ALCH"],          "desc": "Medieval practice of transforming metals" },
+  { "w": "SCEPTRE",     "d": "hard",       "lang": "en", "fr": ["SCEPT"],         "desc": "A ceremonial staff held by a ruler" },
+  { "w": "MERIDIAN",    "d": "hard",       "lang": "en", "fr": ["MERID"],         "desc": "An imaginary line of longitude on Earth" },
+  { "w": "NECROMANCER", "d": "diabolical", "lang": "en", "fr": ["NECR"],          "desc": "One who communicates with the dead" },
+  { "w": "ZIGGURAT",    "d": "diabolical", "lang": "en", "fr": ["ZIGG"],          "desc": "A stepped pyramid from ancient Mesopotamia" },
+  { "w": "PALIMPSEST",  "d": "diabolical", "lang": "en", "fr": ["PALIMP"],        "desc": "A manuscript where old text was erased and overwritten" },
+  { "w": "APOTHEOSIS",  "d": "diabolical", "lang": "en", "fr": ["APOTH"],         "desc": "The highest point or perfect example of something" },
+  { "w": "SOLIPSISM",   "d": "diabolical", "lang": "en", "fr": ["SOLIPS"],        "desc": "The belief that only one's own mind exists" }
+]

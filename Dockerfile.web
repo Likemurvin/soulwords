@@ -1,0 +1,16 @@
+# Stage 1 — build the Vite frontend
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+ARG VITE_BOT_USERNAME
+ARG VITE_APP_NAME
+ENV VITE_BOT_USERNAME=$VITE_BOT_USERNAME
+ENV VITE_APP_NAME=$VITE_APP_NAME
+RUN npm run build
+
+# Stage 2 — serve the build, proxy API/socket traffic
+FROM caddy:2-alpine
+COPY --from=build /app/dist /srv
+COPY Caddyfile /etc/caddy/Caddyfile

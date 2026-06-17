@@ -1,27 +1,35 @@
 version: "3.9"
-
 services:
   mongo:
     image: mongo:7
     restart: unless-stopped
-    ports:
-      - "27018:27017"
     volumes:
       - mongo_data:/data/db
 
   api:
     build: ./server
     restart: unless-stopped
-    ports:
-      - "3001:3001"
     environment:
       - MONGO_URL=mongodb://mongo:27017/soulwords
       - PORT=3001
       - BOT_TOKEN=${BOT_TOKEN:-}
       - ALLOW_DEV_AUTH=${ALLOW_DEV_AUTH:-0}
-      - MINI_APP_NAME=${MINI_APP_NAME:-1}
+      - MINI_APP_NAME=${MINI_APP_NAME:-souls}
     depends_on:
       - mongo
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      args:
+        VITE_BOT_USERNAME: ${VITE_BOT_USERNAME}
+        VITE_APP_NAME: ${VITE_APP_NAME}
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - api
 
 volumes:
   mongo_data:

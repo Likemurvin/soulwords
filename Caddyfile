@@ -1,4 +1,4 @@
-:80 {
+souls.humancircle.xyz {
 	encode gzip
 
 	handle /api/* {
